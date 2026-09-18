@@ -127,14 +127,14 @@ age groups.
 
 ### Page 2 — Customer Behavior & Attrition
 
-![Customer Behavior & Attrition](image/Page%202.png)
+![Customer Behavior & Attrition](4.Credit_Churn_Revenue_Analysis/image/Page2.png)
 
 This page analyzes customer behavior associated with attrition, including
 relationship depth, transaction activity and customer inactivity.
 
 ### Page 3 — Customer Segment Analysis
 
-![Customer Segment Analysis](image/Page%203.png)
+![Customer Segment Analysis](4.Credit_Churn_Revenue_Analysis/image/Page3.png)
 
 This page combines income and card categories to examine customer segment
 size, attrition rates and the number of attrited customers.
