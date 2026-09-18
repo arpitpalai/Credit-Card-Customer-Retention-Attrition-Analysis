@@ -7,28 +7,27 @@ of which customer segments and behavioral patterns were associated with customer
 attrition.
 
 The objective was to analyze customer demographics, card categories, income
-segments, customer engagement, inactivity and transaction activity to identify
-patterns that could support customer retention efforts.
+segments, customer engagement, inactivity, transaction activity and relationship
+depth to identify patterns that could support customer retention efforts.
 
 ## 🔍 What I Did
 
-- Cleaned and prepared 10,127 credit-card customer records
-- Checked customer identifiers, missing values, data types and data quality
+- Explored and reviewed 10,127 credit-card customer records using Excel
+- Performed basic data cleaning and data-quality checks in Excel
+- Checked customer identifiers, duplicates, missing values and categorical values
 - Reviewed categorical fields containing "Unknown" values
-- Removed pre-generated Naive Bayes classifier output columns from the main
-  business analysis to avoid using model-generated variables as business
-  attributes
-- Created age groups for customer segmentation
+- Prepared the dataset for SQL-based analysis
 - Analyzed customer attrition across income categories, card categories and
   age groups using MySQL
-- Analyzed customer inactivity, transaction activity, customer contacts and
-  relationship depth
+- Analyzed customer inactivity and its relationship with attrition
 - Compared transaction activity between existing and attrited customers
-- Analyzed combined income and card-category customer segments
+- Analyzed customer contacts and relationship depth
+- Analyzed changes in transaction count between existing and attrited customers
+- Combined income category and card category to identify customer segments
 - Answered 10 business questions using SQL
 - Built an interactive 3-page Power BI dashboard
-- Developed business insights and retention-focused recommendations based
-  on the analysis
+- Developed business insights and retention-focused suggestions based on
+  the analysis
 
 ## 💡 Key Findings
 
@@ -39,47 +38,41 @@ patterns that could support customer retention efforts.
   attrition rate at 17.33%, while the $60K–$80K category had the lowest
   attrition rate at 13.48%.
 - Platinum cardholders recorded the highest overall attrition rate at 25.00%,
-  compared with 14.77% for Silver cardholders.
+  while Silver cardholders recorded the lowest at 14.77%.
 - Customers aged 40–49 recorded the highest attrition rate at 16.93%,
-  while customers aged 20–29 had the lowest rate at 8.72%.
-- Attrited customers had an average transaction count of 45 compared with
-  69 for existing customers, indicating substantially lower transaction
-  activity among customers who had attrited.
+  while customers aged 20–29 had the lowest at 8.72%.
+- Existing customers had an average transaction count of 69 compared with
+  45 among attrited customers.
 - Attrition rates varied across customer inactivity levels, reaching 29.89%
   among customers inactive for 4 months.
-- Customers with fewer than 4 bank relationships showed higher attrition
-  rates, with the highest observed rate of 27.84% among customers with
-  2 relationships.
+- Customers with fewer than 4 bank relationships showed relatively higher
+  attrition rates, with the highest observed rate of 27.84% among customers
+  with 2 relationships.
 - Attrition varied across combined income and card-category segments.
-- The $40K–$60K Platinum segment recorded a 100% attrition rate, but this
-  result should be interpreted cautiously because the segment has a very
-  small customer base.
-- The analysis identified differences in attrition across customer
-  demographics, engagement levels, transaction activity and relationship
-  depth.
+- The $40K–$60K Platinum segment recorded a 100% attrition rate; however,
+  this segment has a very small customer base and the result should therefore
+  be interpreted cautiously.
 
 ## 💡 Business Suggestions
 
 - Monitor declining transaction activity as a potential customer-engagement
   signal and investigate customers showing meaningful reductions in activity.
 - Investigate customers with fewer bank relationships to understand whether
-  lower relationship depth is associated with reduced engagement.
-- Conduct deeper analysis of customer segments with relatively high attrition
-  rates, considering both attrition rate and customer volume before
-  prioritizing retention efforts.
-- Investigate the reasons behind higher attrition among Platinum cardholders
-  and determine whether specific customer needs or service factors are
-  associated with the observed pattern.
-- Use customer inactivity and transaction behavior as areas for further
-  investigation when developing customer retention strategies.
+  lower relationship depth is associated with reduced customer engagement.
+- Evaluate high-attrition customer segments using both attrition rate and
+  customer volume before prioritizing retention efforts.
+- Investigate the factors associated with the relatively high attrition rate
+  among Platinum cardholders.
+- Monitor customer inactivity levels as a potential indicator of declining
+  engagement.
 - Validate high attrition rates in small customer segments before making
   business decisions based on them.
-- Combine attrition rate, customer volume and engagement indicators when
-  evaluating potential retention opportunities.
+- Combine customer segment, engagement and transaction metrics to support
+  more targeted retention analysis.
 
 ## ⚠️ Analytical Considerations
 
-- The analysis identifies relationships and patterns in the available data;
+- The analysis identifies patterns and associations in the available data;
   it does not establish causation.
 - The dataset does not provide direct information about why customers
   discontinued their relationship with the bank.
@@ -89,27 +82,68 @@ patterns that could support customer retention efforts.
   competitor activity and reasons for attrition would be useful for deeper
   retention analysis.
 
+## 🧠 Analytical Approach
+
+The project followed a business-focused analytical workflow:
+
+**Business Problem → Excel Exploration & Cleaning → SQL Analysis → Power BI
+Dashboard → Key Findings → Business Suggestions**
+
+### Business Questions
+
+1. What is the overall customer attrition rate?
+2. How many customers are there in each card category, and what is the
+   attrition rate for each?
+3. What is the attrition rate for each income category?
+4. How does attrition vary across different age groups?
+5. How does customer inactivity relate to attrition?
+6. How does transaction activity differ between existing and attrited customers?
+7. Does the number of customer contacts relate to attrition?
+8. Does the number of relationships/products a customer has relate to attrition?
+9. How does transaction activity change differ between existing and attrited
+   customers?
+10. Which customer segments have the highest attrition rate?
+
 ## 🛠️ Skills Used
 
-Python | Pandas | NumPy | MySQL | SQL | Power BI | DAX | Data Cleaning |
-EDA | Data Analysis | Data Visualization | Business Analysis
+Excel | MySQL | SQL | Power BI | DAX | Data Cleaning |
+Data Exploration | EDA | Data Analysis | Data Visualization | Business Analysis
 
 ## 📂 Project Files
 
-- [Python Data Cleaning & Analysis](Credit_Card_Customer_Retention/python/credit_card_attrition_analysis.ipynb)
-- [SQL Business Analysis](Credit_Card_Customer_Retention/sql/customer_attrition_analysis.sql)
-- [Power BI Dashboard](Credit_Card_Customer_Retention/powerbi/Customer_Retention_Attrition_Dashboard.pbix)
+- [Dataset](data/BankChurners.csv)
+- [SQL Business Analysis](bank_churners.sql)
+- [Power BI Dashboard](Attrition_analysis_dashboard.pbix)
 
 ## 📊 Dashboard
 
-### Customer Attrition Overview
+### Page 1 — Customer Attrition Overview
 
-![Customer Attrition Overview](Credit_Card_Customer_Retention/image/page1.png)
+![Customer Attrition Overview](image/Page%201.png)
 
-### Customer Behavior & Attrition
+This page provides an executive-level view of overall customer attrition
+and compares attrition rates across income categories, card categories and
+age groups.
 
-![Customer Behavior & Attrition](Credit_Card_Customer_Retention/image/page2.png)
+### Page 2 — Customer Behavior & Attrition
 
-### Customer Segment Analysis
+![Customer Behavior & Attrition](image/Page%202.png)
 
-![Customer Segment Analysis](Credit_Card_Customer_Retention/image/page3.png)
+This page analyzes customer behavior associated with attrition, including
+relationship depth, transaction activity and customer inactivity.
+
+### Page 3 — Customer Segment Analysis
+
+![Customer Segment Analysis](image/Page%203.png)
+
+This page combines income and card categories to examine customer segment
+size, attrition rates and the number of attrited customers.
+
+## 📌 Project Outcome
+
+The analysis provides a structured view of customer attrition across
+customer demographics, engagement behavior and customer segments.
+
+The findings can be used as a starting point for further investigation into
+customer retention opportunities and the development of targeted retention
+strategies.
