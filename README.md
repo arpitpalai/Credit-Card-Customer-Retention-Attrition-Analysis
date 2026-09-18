@@ -119,7 +119,7 @@ Data Exploration | EDA | Data Analysis | Data Visualization | Business Analysis
 
 ### Page 1 — Customer Attrition Overview
 
-![Customer Attrition Overview](image/Page%1.png)
+![Customer Attrition Overview](4.Credit_Churn_Revenue_Analysis/image/Page1.png)
 
 This page provides an executive-level view of overall customer attrition
 and compares attrition rates across income categories, card categories and
